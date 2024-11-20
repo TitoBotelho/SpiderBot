@@ -147,13 +147,15 @@ void loop() {
 
               writeServos(6, 180);  // Move o servo no canal 0 para a posição 10
               delay(30);
+              writeServos(7, 180);  // Move o servo no canal 0 para a posição 10
+              delay(30);
               writeServos(8, 180);  // Move o servo no canal 0 para a posição 10
               delay(30);
               writeServos(9, 180);  // Move o servo no canal 0 para a posição 10
               delay(30);
               writeServos(10, 180);  // Move o servo no canal 0 para a posição 10
               delay(30);
-              writeServos(12, 180);  // Move o servo no canal 0 para a posição 10
+              writeServos(11, 180);  // Move o servo no canal 0 para a posição 10
               delay(30);
 
             } else if (header.indexOf("GET /27/off") >= 0) {
@@ -162,13 +164,15 @@ void loop() {
 
               writeServos(6, 180);  // Move o servo no canal 0 para a posição 10
               delay(30);
+              writeServos(7, 180);  // Move o servo no canal 0 para a posição 10
+              delay(30);
               writeServos(8, 180);  // Move o servo no canal 0 para a posição 10
               delay(30);
               writeServos(9, 180);  // Move o servo no canal 0 para a posição 10
               delay(30);
               writeServos(10, 180);  // Move o servo no canal 0 para a posição 10
               delay(30);
-              writeServos(12, 180);  // Move o servo no canal 0 para a posição 10
+              writeServos(11, 180);  // Move o servo no canal 0 para a posição 10
               delay(30);
             }
 
@@ -186,13 +190,15 @@ void loop() {
 
               writeServos(6, 60);
               delay(30);
+              writeServos(7, 60);
+              delay(30);
               writeServos(8, 60);
               delay(30);
               writeServos(9, 60);
               delay(30);
               writeServos(10, 60);
               delay(30);
-              writeServos(12, 60);
+              writeServos(11, 60);
               delay(30);
 
 
@@ -202,13 +208,15 @@ void loop() {
 
               writeServos(6, 60);
               delay(30);
+              writeServos(7, 60);
+              delay(30);
               writeServos(8, 60);
               delay(30);
               writeServos(9, 60);
               delay(30);
               writeServos(10, 60);
               delay(30);
-              writeServos(12, 60);
+              writeServos(11, 60);
               delay(30);
 
 
