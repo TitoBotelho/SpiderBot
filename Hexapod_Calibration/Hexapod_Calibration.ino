@@ -1,6 +1,9 @@
 /*********
-  Rui Santos
-  Complete project details at http://randomnerdtutorials.com  
+SPIDER BOT
+
+CALIBRATION CODE
+
+
 *********/
 
 // Load Wi-Fi library
@@ -101,17 +104,17 @@ void loop() {
 
 
               writeServos(0, 10);  // Move o servo no canal 0 para a posição 170
-              delay(30);
+              delay(20);
               writeServos(1, 10);  // Move o servo no canal 0 para a posição 170
-              delay(30);
+              delay(20);
               writeServos(2, 10);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(3, 170);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(4, 170);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(5, 170);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
 
 
 
@@ -121,17 +124,17 @@ void loop() {
               output26State = "off";
 
               writeServos(0, 90);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(1, 90);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(2, 90);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(3, 90);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(4, 90);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(5, 90);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
             }
             //_______________________________________________________________________________________________________________
 
@@ -146,34 +149,34 @@ void loop() {
 
 
               writeServos(6, 180);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(7, 180);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(8, 180);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(9, 180);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(10, 180);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(11, 180);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
 
             } else if (header.indexOf("GET /27/off") >= 0) {
               Serial.println("GPIO 27 off");
               output27State = "off";
 
               writeServos(6, 180);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(7, 180);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(8, 180);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(9, 180);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(10, 180);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
               writeServos(11, 180);  // Move o servo no canal 0 para a posição 10
-              delay(30);
+              delay(20);
             }
 
 
@@ -189,17 +192,17 @@ void loop() {
               output28State = "on";
 
               writeServos(6, 60);
-              delay(30);
+              delay(20);
               writeServos(7, 60);
-              delay(30);
+              delay(20);
               writeServos(8, 60);
-              delay(30);
+              delay(20);
               writeServos(9, 60);
-              delay(30);
+              delay(20);
               writeServos(10, 60);
-              delay(30);
+              delay(20);
               writeServos(11, 60);
-              delay(30);
+              delay(20);
 
 
             } else if (header.indexOf("GET /28/off") >= 0) {
@@ -207,17 +210,17 @@ void loop() {
               output28State = "off";
 
               writeServos(6, 60);
-              delay(30);
+              delay(20);
               writeServos(7, 60);
-              delay(30);
+              delay(20);
               writeServos(8, 60);
-              delay(30);
+              delay(20);
               writeServos(9, 60);
-              delay(30);
+              delay(20);
               writeServos(10, 60);
-              delay(30);
+              delay(20);
               writeServos(11, 60);
-              delay(30);
+              delay(20);
 
 
 
@@ -365,11 +368,11 @@ void posicaoInicial() {
   delay(30);
   writeServos(2, 10);  // Move o servo no canal 0 para a posição 10
   delay(30);
-  writeServos(3, 10);  // Move o servo no canal 0 para a posição 10
+  writeServos(3, 170);  // Move o servo no canal 0 para a posição 10
   delay(30);
   writeServos(4, 90);  // Move o servo no canal 0 para a posição 10
   delay(30);
-  writeServos(5, 170);  // Move o servo no canal 0 para a posição 10
+  writeServos(5, 10);  // Move o servo no canal 0 para a posição 10
   delay(30);
 }
 
