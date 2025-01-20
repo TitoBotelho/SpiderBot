@@ -1,9 +1,6 @@
 /*********
-SPIDER BOT
-
-CALIBRATION CODE
-
-
+  Rui Santos
+  Complete project details at http://randomnerdtutorials.com  
 *********/
 
 // Load Wi-Fi library
@@ -26,6 +23,7 @@ String output26State = "off";
 String output27State = "off";
 String output28State = "off";
 String output29State = "off";
+String output30State = "off";
 
 // INSTANCIANDO OBJETOS
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
@@ -103,18 +101,19 @@ void loop() {
               output26State = "on";
 
 
-              writeServos(0, 10);  // Move o servo no canal 0 para a posição 170
-              delay(20);
-              writeServos(1, 10);  // Move o servo no canal 0 para a posição 170
-              delay(20);
-              writeServos(2, 10);  // Move o servo no canal 0 para a posição 10
-              delay(20);
-              writeServos(3, 170);  // Move o servo no canal 0 para a posição 10
-              delay(20);
-              writeServos(4, 170);  // Move o servo no canal 0 para a posição 10
-              delay(20);
-              writeServos(5, 170);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              writeServos(0, 0);  // Move o servo no canal 0 para a posição 170
+              delay(10);
+              writeServos(1, 90);  // Move o servo no canal 0 para a posição 170
+              delay(10);
+              writeServos(2, 180);  // Move o servo no canal 0 para a posição 10
+              delay(10);
+              writeServos(3, 0);  // Move o servo no canal 0 para a posição 10
+              delay(10);
+              writeServos(4, 90);  // Move o servo no canal 0 para a posição 10
+              delay(10);
+              writeServos(5, 180);  // Move o servo no canal 0 para a posição 10
+              delay(10);
+
 
 
 
@@ -124,17 +123,17 @@ void loop() {
               output26State = "off";
 
               writeServos(0, 90);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(1, 90);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(2, 90);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(3, 90);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(4, 90);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(5, 90);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
             }
             //_______________________________________________________________________________________________________________
 
@@ -149,34 +148,34 @@ void loop() {
 
 
               writeServos(6, 180);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(7, 180);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(8, 180);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(9, 180);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(10, 180);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(11, 180);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
 
             } else if (header.indexOf("GET /27/off") >= 0) {
               Serial.println("GPIO 27 off");
               output27State = "off";
 
               writeServos(6, 180);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(7, 180);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(8, 180);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(9, 180);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(10, 180);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
               writeServos(11, 180);  // Move o servo no canal 0 para a posição 10
-              delay(20);
+              delay(10);
             }
 
 
@@ -192,17 +191,17 @@ void loop() {
               output28State = "on";
 
               writeServos(6, 60);
-              delay(20);
+              delay(10);
               writeServos(7, 60);
-              delay(20);
+              delay(10);
               writeServos(8, 60);
-              delay(20);
+              delay(10);
               writeServos(9, 60);
-              delay(20);
+              delay(10);
               writeServos(10, 60);
-              delay(20);
+              delay(10);
               writeServos(11, 60);
-              delay(20);
+              delay(10);
 
 
             } else if (header.indexOf("GET /28/off") >= 0) {
@@ -210,17 +209,17 @@ void loop() {
               output28State = "off";
 
               writeServos(6, 60);
-              delay(20);
+              delay(10);
               writeServos(7, 60);
-              delay(20);
+              delay(10);
               writeServos(8, 60);
-              delay(20);
+              delay(10);
               writeServos(9, 60);
-              delay(20);
+              delay(10);
               writeServos(10, 60);
-              delay(20);
+              delay(10);
               writeServos(11, 60);
-              delay(20);
+              delay(10);
 
 
 
@@ -246,6 +245,71 @@ void loop() {
             } else if (header.indexOf("GET /29/off") >= 0) {
               Serial.println("GPIO 29 off");
               output29State = "off";
+            }
+
+
+            //_______________________________________________________________________________________________________________
+
+            // BOTÃO 5
+
+            //_______________________________________________________________________________________________________________
+
+
+            else if (header.indexOf("GET /30/on") >= 0) {
+              Serial.println("GPIO 30 on");
+              output30State = "on";
+
+
+              movimento1();
+              delay(10);
+              movimento2();
+              delay(10);
+              movimento3();
+              delay(10);
+
+              movimento1();
+              delay(10);
+              movimento2();
+              delay(10);
+              movimento3();
+              delay(10);
+              
+              movimento1();
+              delay(10);
+              movimento2();
+              delay(10);
+              movimento3();
+              delay(10);
+
+
+
+            } else if (header.indexOf("GET /30/off") >= 0) {
+              Serial.println("GPIO 30 off");
+              output30State = "off";
+
+              movimento1();
+              delay(10);
+              movimento2();
+              delay(10);
+              movimento3();
+              delay(10);
+
+              movimento1();
+              delay(10);
+              movimento2();
+              delay(10);
+              movimento3();
+              delay(10);
+              
+              movimento1();
+              delay(10);
+              movimento2();
+              delay(10);
+              movimento3();
+              delay(10);
+
+
+
             }
 
             //_______________________________________________________________________________________________________________
@@ -300,7 +364,7 @@ void loop() {
               client.println("<p><a href=\"/28/off\"><button class=\"button button2\">OFF</button></a></p>");
             }
 
-            // Display current state, and ON/OFF buttons for GPIO 28
+            // Display current state, and ON/OFF buttons for GPIO 29
             client.println("<p>GPIO 29 - State " + output29State + "</p>");
             // If the output27State is off, it displays the ON button
             if (output29State == "off") {
@@ -309,6 +373,15 @@ void loop() {
               client.println("<p><a href=\"/29/off\"><button class=\"button button2\">OFF</button></a></p>");
             }
 
+
+            // Display current state, and ON/OFF buttons for GPIO 30
+            client.println("<p>GPIO 30 - State " + output30State + "</p>");
+            // If the output27State is off, it displays the ON button
+            if (output30State == "off") {
+              client.println("<p><a href=\"/30/on\"><button class=\"button\">ON</button></a></p>");
+            } else {
+              client.println("<p><a href=\"/30/off\"><button class=\"button button2\">OFF</button></a></p>");
+            }
             client.println("</body></html>");
 
             // The HTTP response ends with another blank line
@@ -362,112 +435,106 @@ void beginServos() {
 
 void posicaoInicial() {
 
-  writeServos(0, 170);  // Move o servo no canal 0 para a posição 170
-  delay(30);
+  writeServos(0, 180);  // Move o servo no canal 0 para a posição 170
+  delay(10);
   writeServos(1, 90);  // Move o servo no canal 0 para a posição 170
-  delay(30);
-  writeServos(2, 10);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-  writeServos(3, 170);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-  writeServos(4, 90);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-  writeServos(5, 10);  // Move o servo no canal 0 para a posição 10
-  delay(30);
+  delay(10);
+  writeServos(2, 1);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(3, 90);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(4, 1);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(5, 180);  // Move o servo no canal 0 para a posição 10
+  delay(10);
 }
 
 void movimento1() {
-  writeServos(6, 90);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-  writeServos(9, 90);  // Move o servo no canal 0 para a posição 10
-  delay(30);
+  writeServos(6, 110);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(10, 110);  // Move o servo no canal 0 para a posição 10
+  delay(10);
 
-  writeServos(0, 10);  // Move o servo no canal 0 para a posição 170
-  delay(30);
-  writeServos(3, 170);  // Move o servo no canal 0 para a posição 10
-  delay(30);
+  writeServos(0, 1);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(4, 180);  // Move o servo no canal 0 para a posição 10
+  delay(10);
 
-
-
-  writeServos(1, 170);  // Move o servo no canal 0 para a posição 170
-  delay(30);
   writeServos(2, 90);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-  writeServos(4, 10);  // Move o servo no canal 0 para a posição 10
-  delay(30);
+  delay(10);
   writeServos(5, 90);  // Move o servo no canal 0 para a posição 10
-  delay(30);
+  delay(10);
+
+  writeServos(1, 180);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(3, 0);  // Move o servo no canal 0 para a posição 10
+  delay(10);
 
 
-  writeServos(6, 170);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-  writeServos(9, 10);  // Move o servo no canal 0 para a posição 10
-  delay(30);
+  writeServos(6, 60);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(10, 60);  // Move o servo no canal 0 para a posição 10
+  delay(10);
 }
 
 void movimento2() {
 
-  writeServos(7, 90);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-  writeServos(10, 90);  // Move o servo no canal 0 para a posição 10
-  delay(30);
+  writeServos(7, 110);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(9, 110);  // Move o servo no canal 0 para a posição 10
+  delay(10);
 
 
-  writeServos(1, 30);  // Move o servo no canal 0 para a posição 170
-  delay(30);
-  writeServos(4, 150);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-
-  writeServos(0, 90);  // Move o servo no canal 0 para a posição 170
-  delay(30);
-  writeServos(3, 90);  // Move o servo no canal 0 para a posição 10
-  delay(30);
+  writeServos(1, 1);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(3, 180);  // Move o servo no canal 0 para a posição 10
+  delay(10);
 
 
+  writeServos(0, 90);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(4, 90);  // Move o servo no canal 0 para a posição 10
+  delay(10);
 
-  writeServos(2, 170);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-  writeServos(5, 10);  // Move o servo no canal 0 para a posição 10
-  delay(30);
+  writeServos(2, 180);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(5, 0);  // Move o servo no canal 0 para a posição 10
+  delay(10);
 
-
-  writeServos(7, 170);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-  writeServos(10, 10);  // Move o servo no canal 0 para a posição 10
-  delay(30);
+  writeServos(7, 60);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(9, 60);  // Move o servo no canal 0 para a posição 10
+  delay(10);
 }
 
 void movimento3() {
 
-  writeServos(8, 90);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-  writeServos(11, 90);  // Move o servo no canal 0 para a posição 10
-  delay(30);
+  writeServos(8, 110);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(11, 110);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+
+  
+  writeServos(1, 90);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(3, 90);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+
+  writeServos(0, 180);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(4, 0);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+
+  writeServos(2, 0);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(5, 180);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+
+  writeServos(8, 60);  // Move o servo no canal 0 para a posição 10
+  delay(10);
+  writeServos(11, 60);  // Move o servo no canal 0 para a posição 10
+  delay(10);
 
 
 
-  writeServos(2, 10);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-  writeServos(5, 170);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-
-  writeServos(1, 90);  // Move o servo no canal 0 para a posição 170
-  delay(30);
-  writeServos(4, 90);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-
-
-
-  writeServos(0, 170);  // Move o servo no canal 0 para a posição 170
-  delay(30);
-  writeServos(3, 10);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-
-
-
-
-  writeServos(8, 170);  // Move o servo no canal 0 para a posição 10
-  delay(30);
-  writeServos(11, 10);  // Move o servo no canal 0 para a posição 10
-  delay(30);
 }
