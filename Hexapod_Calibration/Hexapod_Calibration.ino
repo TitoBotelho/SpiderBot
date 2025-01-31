@@ -1,4 +1,12 @@
 /*********
+ * 
+ * SPIDER BOT
+ * Autor: Tito Botelho de Faria
+ * 
+ * 
+ * 
+ * 
+ * Based on the project:
   Rui Santos
   Complete project details at http://randomnerdtutorials.com  
 *********/
@@ -11,6 +19,13 @@
 // Replace with your network credentials
 const char* ssid = "Tito - cel";
 const char* password = "teste123";
+
+// Define static IP settings
+IPAddress local_IP(192, 168, 72, 226); // Substitua pelo IP desejado
+IPAddress gateway(192, 168, 1, 1);    // Substitua pelo gateway da sua rede
+IPAddress subnet(255, 255, 255, 0);   // Substitua pela máscara de sub-rede da sua rede
+IPAddress primaryDNS(8, 8, 8, 8);     // Opcional: Substitua pelo DNS primário
+IPAddress secondaryDNS(8, 8, 4, 4);   // Opcional: Substitua pelo DNS secundário
 
 // Set web server port number to 80
 WiFiServer server(80);
@@ -40,27 +55,27 @@ unsigned long previousTime = 0;
 const long timeoutTime = 2000;
 
 void setup() {
+  // Serial port for debugging purposes
   Serial.begin(115200);
 
-
+  // Configura o IP fixo
+  if (!WiFi.config(local_IP, gateway, subnet, primaryDNS, secondaryDNS)) {
+    Serial.println("Falha ao configurar IP estático");
+  }
 
   // Connect to Wi-Fi network with SSID and password
-  Serial.print("Connecting to ");
-  Serial.println(ssid);
   WiFi.begin(ssid, password);
+
   while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
+    delay(1000);
+    Serial.println("Conectando ao WiFi...");
   }
+
   // Print local IP address and start web server
-  Serial.println("");
-  Serial.println("WiFi connected.");
-  Serial.println("IP address: ");
+  Serial.println("Conectado ao WiFi");
+  Serial.print("Endereço IP: ");
   Serial.println(WiFi.localIP());
   server.begin();
-
-  beginServos();  // INCIA OS SERVOS
-  delay(300);
 }
 
 void loop() {
